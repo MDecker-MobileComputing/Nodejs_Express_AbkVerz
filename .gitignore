@@ -1,0 +1,4 @@
+node_modules/
+
+// "Datenbank"-Datei, die von "lowdb" erstellt wird
+db.json
