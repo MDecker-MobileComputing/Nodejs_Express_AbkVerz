@@ -49,16 +49,25 @@ app.get("/abkverz/v1/abfrage/:abk", (req, res) => {
  */
 app.post("/abkverz/v1/dazu/:abk/:bedeutung", async (req, res) => {
 
-    const abk       = req.params.abk
-    const bedeutung = req.params.bedeutung;
+    const abk       = decodeURIComponent( req.params.abk       );
+    const bedeutung = decodeURIComponent( req.params.bedeutung );
 
     console.log(`POST-Request für Abkürzung: ${abk}, Bedeutung: ${bedeutung}`);
 
     const abkNormalized = abk.trim().toUpperCase();
 
-
     let schonDa = db.data[abkNormalized];
     if (schonDa) {
+
+        if (schonDa.includes(bedeutung)) {
+
+            res.status(409)
+            .json({ "erfolg": false,
+                    "bedeutungen": db.data[abkNormalized],
+                    "fehler": `Bedeutung "${bedeutung}" für Abkürzung "${abkNormalized}" bereits vorhanden`
+                  });
+            return;
+        }
 
         console.log(`Weitere Bedeutung für Abkürzung ${abkNormalized} gespeichert: ${bedeutung}`);
         schonDa.push(bedeutung);
