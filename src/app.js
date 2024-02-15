@@ -64,7 +64,7 @@ app.post("/abkverz/v1/dazu/:abk/:bedeutung", async (req, res) => {
             res.status(409)
             .json({ "erfolg": false,
                     "bedeutungen": db.data[abkNormalized],
-                    "fehler": `Bedeutung "${bedeutung}" für Abkürzung "${abkNormalized}" bereits vorhanden`
+                    "fehler": `Bedeutung "${bedeutung}" für Abkürzung "${abkNormalized}" bereits vorhanden.`
                   });
             return;
         }
@@ -90,6 +90,7 @@ app.post("/abkverz/v1/dazu/:abk/:bedeutung", async (req, res) => {
 
 // statische Dateien (z.B. "index.html") aus Unterordner "public/" bereitstellen
 app.use( express.static("public") );
+
 
 // Web-Server starten
 app.listen( PORT_NUMMER,
