@@ -5,9 +5,6 @@ const PORT_NUMMER = 8080;
 
 const app = express();
 
-// Damit Body von HTTP-POST-Request als JSON interpretiert wird
-//app.use( express.json() );
-
 
 // Datenbank initialisieren
 const defaultDataObj =  {
