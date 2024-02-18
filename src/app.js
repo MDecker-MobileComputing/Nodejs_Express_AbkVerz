@@ -65,19 +65,19 @@ app.post("/abkverz/v1/dazu/:abk/:bedeutung", async (req, res) => {
 
             res.status(409)
             .json({ "erfolg": false,
-                    "bedeutungen": db.data[abkNormalized],
+                    "bedeutungen": db.data[ abkNormalized ],
                     "fehler": `Bedeutung "${bedeutung}" für Abkürzung "${abkNormalized}" bereits vorhanden.`
                   });
             return;
         }
 
         console.log(`Weitere Bedeutung für Abkürzung ${abkNormalized} gespeichert: ${bedeutung}`);
-        schonDa.push(bedeutung);
+        schonDa.push(bedeutung); // weiteres Element für String-Array
 
     } else {
 
         console.log(`Erste Bedeutung für Abkürzung ${abkNormalized} gespeichert: ${bedeutung}`);
-        db.data[abkNormalized] = [bedeutung];
+        db.data[ abkNormalized ] = [ bedeutung ];
     }
 
     await db.write();
