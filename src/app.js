@@ -7,8 +7,13 @@ const app = express();
 
 
 // Datenbank initialisieren
+//
+// Datenmodell: die Abkürzungen sind Schlüssel auf oberster Ebene im JSON-Objekt, die
+// String-Arrays mit mindestens einem Eintrag=Bedeutung referenzieren.
 const defaultDataObj =  {
+
     KSC: ["Kennedy Space Center", "Karlsruher Sport Club"],
+
     OOO: ["Out of Office", "Out of Order", "Out of Orbit"]
 };
 const db = await JSONFilePreset("db.json", defaultDataObj);
@@ -22,12 +27,12 @@ app.get("/abkverz/v1/abfrage/:abk", (req, res) => {
     const abk           = req.params.abk;
     const abkNormalized = abk.trim().toUpperCase();
 
-    const ergebnis = db.data[abkNormalized];
-    if (ergebnis) {
+    const bedeutungArray = db.data[ abkNormalized ];
+    if (bedeutungArray) {
 
         res.status(200)
            .json({ "erfolg": true,
-                   "ergebnis": ergebnis
+                   "ergebnis": bedeutungArray
                  });
     } else {
 
@@ -53,7 +58,7 @@ app.post("/abkverz/v1/dazu/:abk/:bedeutung", async (req, res) => {
 
     const abkNormalized = abk.trim().toUpperCase();
 
-    let schonDa = db.data[abkNormalized];
+    let schonDa = db.data[ abkNormalized ];
     if (schonDa) {
 
         if (schonDa.includes(bedeutung)) {
