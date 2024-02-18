@@ -84,7 +84,7 @@ app.post("/abkverz/v1/dazu/:abk/:bedeutung", async (req, res) => {
 
     res.status(201)
        .json({ "erfolg": true,
-               "bedeutungen": db.data[abkNormalized]
+               "bedeutungen": db.data[ abkNormalized ]
              });
 });
 
