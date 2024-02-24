@@ -55,7 +55,7 @@ app.get("/abkverz/v1/metriken", (req, res) => {
     Object.keys( db.data ).forEach( (abkuerzung) => {
        
         abkZaehler++;
-        
+
         let anzahlBedeutungen = db.data[ abkuerzung ].length;
         bedeutungZaehler += anzahlBedeutungen;
     });
@@ -111,6 +111,44 @@ app.post("/abkverz/v1/dazu/:abk/:bedeutung", async (req, res) => {
              });
 });
 
+
+/**
+ * REST-Endpunkt zum Löschen einer Abkürzung mit all ihren Bedeutungen.
+ */
+app.delete("/abkverz/v1/loesche/abkuerzung/:abk", async (req, res) => {
+
+    const abk           = req.params.abk;
+    const abkNormalized = abk.trim().toUpperCase();
+
+    if (db.data[ abkNormalized ]) {
+
+        const anzahlBedeutungen = db.data[ abkNormalized ].length;
+
+        delete db.data[ abkNormalized ];
+        await db.write();
+
+        res.status(200)
+           .json({ "erfolg": true,
+                   "nachricht": `Abkürzung "${abkNormalized}" mit ${anzahlBedeutungen} Bedeutungen gelöscht.`
+                 });
+
+    } else {
+
+        res.status(404)
+           .json({ "erfolg": false,
+                   "nachricht": `Zu löschende Abkürzung "${abkNormalized}" nicht gefunden.`
+                 });
+    }
+
+});
+
+
+/**
+ * REST-Endpunkt zum Löschen einer Bedeutung für eine Abkürzung.
+ */
+app.delete("/abkverz/v1/loesche/bedeutung/:abk/:bedeutung", async (req, res) => {
+
+});
 
 
 // statische Dateien (z.B. "index.html") aus Unterordner "public/" bereitstellen
