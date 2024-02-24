@@ -45,6 +45,29 @@ app.get("/abkverz/v1/abfrage/:abk", (req, res) => {
 
 
 /**
+ * REST-Endpunkt zum Abrufen von Metriken über den Datenbestand.
+ */
+app.get("/abkverz/v1/metriken", (req, res) => {
+
+    let abkZaehler       = 0;
+    let bedeutungZaehler = 0;
+
+    Object.keys( db.data ).forEach( (abkuerzung) => {
+       
+        abkZaehler++;
+        
+        let anzahlBedeutungen = db.data[ abkuerzung ].length;
+        bedeutungZaehler += anzahlBedeutungen;
+    });
+
+    res.status(200)
+       .json({ "anzahlAbkuerzungen": abkZaehler,
+               "anzahlBedeutungen" : bedeutungZaehler
+             });
+});
+
+
+/**
  * REST-Endpunkt zum Eintragen der ersten Bedeutung für eine
  * neue Abkürzung oder einer weiteren Bedeutung für eine
  * bereits vorhandene Abkürzung.

@@ -4,7 +4,7 @@
     {
       "entity": {
         "type": "Project",
-        "id": "a0586196-9570-4066-a0b4-713bbca0b8d2",
+        "id": "8838646d-c7a0-4627-8826-bf08cc723083",
         "name": "AbkVerz"
       },
       "children": [
@@ -35,7 +35,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/abfrage/KSC"
             },
-            "id": "01d49137-b7b5-4fce-aba3-b7ac4c6d1945",
+            "id": "87d89c0b-70e8-496e-8c45-37d9ea17fc07",
             "name": "Abfrage \"KSC\"",
             "headers": []
           }
@@ -67,7 +67,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/abfrage/Ksc"
             },
-            "id": "0a0491b5-0b3c-4856-9eb5-4b205ff533d1",
+            "id": "389d5f81-82ed-4af0-b72b-f8ba0b710557",
             "name": "Abfrage \"Ksc\"",
             "headers": []
           }
@@ -99,8 +99,40 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/abfrage/NPM"
             },
-            "id": "cf648dcc-9f29-4d4b-829a-c82ca9d53729",
+            "id": "726da1bc-5fc1-498d-8757-23ff77284334",
             "name": "Abfrage \"NPM\"",
+            "headers": []
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+              "name": "GET"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8080",
+              "path": "/abkverz/v1/metriken"
+            },
+            "id": "8ad14b81-f632-4f81-8330-1f74de77303b",
+            "name": "Abfrage Metriken",
             "headers": []
           }
         },
@@ -132,7 +164,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/dazu/ABK/Abk%C3%BCrzung"
             },
-            "id": "0901d1fb-d578-4114-b27a-a6b23494ff24",
+            "id": "69bd3212-13e9-4d4c-b4dc-ef21a5c5a815",
             "name": "neue ABK: \"ABK\" (Bedeutung mit Umlaut)",
             "headers": [
               {
@@ -169,9 +201,9 @@
                 "version": "V11"
               },
               "host": "localhost:8080",
-              "path": "/abkverz/v1/dazu/NPM/Node Package Manager"
+              "path": "/abkverz/v1/dazu/NPM/Never Pay Anything"
             },
-            "id": "b58e78b8-c38c-4074-96c8-df89badde146",
+            "id": "dc1f8628-9302-4f06-bbae-7e0102d8717e",
             "name": "neue ABK: \"NPM\"",
             "headers": [
               {
