@@ -181,16 +181,16 @@ app.delete("/abkverz/v1/loesche/bedeutung/:abk/:bedeutung", async (req, res) => 
                     "nachricht": `Einzige Bedeutung für Abkürzung "${abkNormalized}" kann nicht gelöscht werden.`
                   });
             return;
-        }
+    }
 
-        // tatsächlich löschen
-        db.data[ abkNormalized ] = db.data[ abkNormalized ].filter( (b) => b !== bedeutung );
-        await db.write();
+    // tatsächlich löschen
+    db.data[ abkNormalized ] = db.data[ abkNormalized ].filter( (b) => b !== bedeutung );
+    await db.write();
 
-        res.status(200)
-           .json({ "erfolg": true,
+    res.status(200)
+       .json({ "erfolg": true,
                    "nachricht": `Bedeutung "${bedeutung}" für Abkürzung "${abkNormalized}" gelöscht.`
-                 });
+             });
 
 });
 
