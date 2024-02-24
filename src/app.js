@@ -148,6 +148,39 @@ app.delete("/abkverz/v1/loesche/abkuerzung/:abk", async (req, res) => {
  */
 app.delete("/abkverz/v1/loesche/bedeutung/:abk/:bedeutung", async (req, res) => {
 
+    const abk           = req.params.abk;
+    const abkNormalized = abk.trim().toUpperCase();
+
+    if (!db.data[ abkNormalized ]) {
+
+        res.status(404)
+           .json({ "erfolg": false,
+                   "nachricht": `Abkürzung "${abkNormalized}" nicht gefunden.`
+                 });
+
+        return;
+    }
+
+    const bedeutung = decodeURIComponent( req.params.bedeutung );
+
+    if (db.data[ abkNormalized ].includes(bedeutung)) {
+
+        db.data[ abkNormalized ] = db.data[ abkNormalized ].filter( (b) => b !== bedeutung );
+        await db.write();
+
+        res.status(200)
+           .json({ "erfolg": true,
+                   "nachricht": `Bedeutung "${bedeutung}" für Abkürzung "${abkNormalized}" gelöscht.`
+                 });
+
+    } else {
+
+        res.status(404)
+           .json({ "erfolg": false,
+                   "nachricht": `Bedeutung "${bedeutung}" für Abkürzung "${abkNormalized}" nicht gefunden.`
+                 });
+    }
+
 });
 
 
