@@ -108,6 +108,70 @@
           "entity": {
             "type": "Request",
             "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+              "name": "DELETE"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8080",
+              "path": "/abkverz/v1/loesche/abkuerzung/KSC"
+            },
+            "id": "69d4e947-20b3-4d86-bf4c-a144ed1c009e",
+            "name": "Löschen: Abkürzung",
+            "headers": []
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+              "name": "DELETE"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": []
+              },
+              "bodyType": "Text"
+            },
+            "uri": {
+              "query": {
+                "delimiter": "&",
+                "items": []
+              },
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "localhost:8080",
+              "path": "/abkverz/v1/loesche/bedeutung/xdf/Node Permanently Moved"
+            },
+            "id": "50d144bb-8b5c-4ef1-848e-299a67d4036a",
+            "name": "Löschen: Bedeutung",
+            "headers": []
+          }
+        },
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
               "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
               "name": "GET"
             },
@@ -132,7 +196,7 @@
               "path": "/abkverz/v1/metriken"
             },
             "id": "8ad14b81-f632-4f81-8330-1f74de77303b",
-            "name": "Abfrage Metriken",
+            "name": "Metriken",
             "headers": []
           }
         },

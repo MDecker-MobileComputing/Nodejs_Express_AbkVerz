@@ -163,8 +163,27 @@ app.delete("/abkverz/v1/loesche/bedeutung/:abk/:bedeutung", async (req, res) => 
 
     const bedeutung = decodeURIComponent( req.params.bedeutung );
 
-    if (db.data[ abkNormalized ].includes(bedeutung)) {
+    if (db.data[ abkNormalized ].includes(bedeutung) == false) {
 
+        res.status(404)
+        .json({ "erfolg": false,
+                "nachricht": `Bedeutung "${bedeutung}" für Abkürzung "${abkNormalized}" nicht gefunden.`
+              });
+        return;
+    }
+
+    // wenn wir in dieser Zeile ankommen, dann enthält die Abkürzung tatsächlich die zu löschende Bedeutung
+
+    if (db.data[ abkNormalized ].length === 1) {
+
+        res.status(400)
+            .json({ "erfolg": false,
+                    "nachricht": `Einzige Bedeutung für Abkürzung "${abkNormalized}" kann nicht gelöscht werden.`
+                  });
+            return;
+        }
+
+        // tatsächlich löschen
         db.data[ abkNormalized ] = db.data[ abkNormalized ].filter( (b) => b !== bedeutung );
         await db.write();
 
@@ -172,14 +191,6 @@ app.delete("/abkverz/v1/loesche/bedeutung/:abk/:bedeutung", async (req, res) => 
            .json({ "erfolg": true,
                    "nachricht": `Bedeutung "${bedeutung}" für Abkürzung "${abkNormalized}" gelöscht.`
                  });
-
-    } else {
-
-        res.status(404)
-           .json({ "erfolg": false,
-                   "nachricht": `Bedeutung "${bedeutung}" für Abkürzung "${abkNormalized}" nicht gefunden.`
-                 });
-    }
 
 });
 
