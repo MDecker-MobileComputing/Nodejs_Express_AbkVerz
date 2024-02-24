@@ -8,8 +8,8 @@ const app = express();
 
 // Datenbank initialisieren
 //
-// Datenmodell: die Abkürzungen sind Schlüssel auf oberster Ebene im JSON-Objekt, die
-// String-Arrays mit mindestens einem Eintrag=Bedeutung referenzieren.
+// Datenmodell: die Abkürzungen sind Schlüssel auf oberster Ebene im JSON-Objekt, 
+// die String-Arrays mit mindestens einem Eintrag=Bedeutung referenzieren.
 const defaultDataObj =  {
 
     KSC: ["Kennedy Space Center", "Karlsruher Sport Club"],
