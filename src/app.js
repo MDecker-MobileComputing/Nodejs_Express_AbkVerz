@@ -29,8 +29,26 @@ function middlewareLogger(req, res, next) {
     next();
 }
 
-// Middleware-Funktion registrieren (vor der Definition der REST-Endpunkte!)
-app.use( middlewareLogger );
+// Globaler Zähler für Middleware-Funktion
+let requestZaehler = 0;
+
+/**
+ * Middleware-Funktion, die die Anzahl der eingehenden Requests zählt und
+ * auf `console.log()` schreibt.
+ */
+function middlewareRequestZaehler(req, res, next) {
+    
+    requestZaehler++;
+    console.log(`Anzahl Requests: ${requestZaehler}\n`);
+    next();
+}
+
+
+// Middleware-Funktion registrieren, vor den REST-Endpunkten;
+// Reihenfolge ist wichtig!
+
+app.use( middlewareLogger         );
+app.use( middlewareRequestZaehler );
 
 
 
