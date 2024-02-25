@@ -238,5 +238,5 @@ app.use( express.static("public") );
 
 // Web-Server starten
 app.listen( PORT_NUMMER,
-    () => { console.log(`Web-Server lauscht auf Port ${PORT_NUMMER}`); }
+    () => { console.log(`Web-Server lauscht auf Port ${PORT_NUMMER}\n`); }
   );
