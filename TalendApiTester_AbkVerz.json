@@ -4,7 +4,7 @@
     {
       "entity": {
         "type": "Project",
-        "id": "8838646d-c7a0-4627-8826-bf08cc723083",
+        "id": "1bfc40ef-8be6-4f0f-89d2-1c8282c116c3",
         "name": "AbkVerz"
       },
       "children": [
@@ -35,7 +35,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/abfrage/KSC"
             },
-            "id": "87d89c0b-70e8-496e-8c45-37d9ea17fc07",
+            "id": "726c18cf-48b1-4a50-8a5b-939faf750f12",
             "name": "Abfrage \"KSC\"",
             "headers": []
           }
@@ -67,7 +67,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/abfrage/Ksc"
             },
-            "id": "389d5f81-82ed-4af0-b72b-f8ba0b710557",
+            "id": "6fb9685e-4582-48e8-b91d-cda5b92a2f92",
             "name": "Abfrage \"Ksc\"",
             "headers": []
           }
@@ -99,7 +99,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/abfrage/NPM"
             },
-            "id": "726da1bc-5fc1-498d-8757-23ff77284334",
+            "id": "8fb2b3a9-096b-492a-8198-1ea8b70723ab",
             "name": "Abfrage \"NPM\"",
             "headers": []
           }
@@ -131,7 +131,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/loesche/abkuerzung/KSC"
             },
-            "id": "69d4e947-20b3-4d86-bf4c-a144ed1c009e",
+            "id": "d839d67f-c548-474f-bfc5-656c44abe7a9",
             "name": "Löschen: Abkürzung",
             "headers": []
           }
@@ -161,9 +161,9 @@
                 "version": "V11"
               },
               "host": "localhost:8080",
-              "path": "/abkverz/v1/loesche/bedeutung/xdf/Node Permanently Moved"
+              "path": "/abkverz/v1/loesche/bedeutung/NPM/Never Pay Anything"
             },
-            "id": "50d144bb-8b5c-4ef1-848e-299a67d4036a",
+            "id": "6c0bc1c4-090a-4078-b6be-4322ef6d37a5",
             "name": "Löschen: Bedeutung",
             "headers": []
           }
@@ -195,7 +195,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/metriken"
             },
-            "id": "8ad14b81-f632-4f81-8330-1f74de77303b",
+            "id": "2aa223ff-07bd-4b7c-a884-9a02f955d433",
             "name": "Metriken",
             "headers": []
           }
@@ -228,7 +228,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/dazu/ABK/Abk%C3%BCrzung"
             },
-            "id": "69bd3212-13e9-4d4c-b4dc-ef21a5c5a815",
+            "id": "1d68d2ac-96d5-4541-a1c3-c5bdf26c3e47",
             "name": "neue ABK: \"ABK\" (Bedeutung mit Umlaut)",
             "headers": [
               {
@@ -265,9 +265,9 @@
                 "version": "V11"
               },
               "host": "localhost:8080",
-              "path": "/abkverz/v1/dazu/NPM/Never Pay Anything"
+              "path": "/abkverz/v1/dazu/NPM/Node Package Manager"
             },
-            "id": "dc1f8628-9302-4f06-bbae-7e0102d8717e",
+            "id": "128b01a9-3cab-4a97-9c0c-77749014753e",
             "name": "neue ABK: \"NPM\"",
             "headers": [
               {
