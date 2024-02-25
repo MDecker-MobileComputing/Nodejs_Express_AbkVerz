@@ -35,11 +35,17 @@ let requestZaehler = 0;
 /**
  * Middleware-Funktion, die die Anzahl der eingehenden Requests zählt und
  * auf `console.log()` schreibt.
+ * Die Anzahl wird zusätzlich als HTTP-Header "X-REQUEST-ZAEHLER" an den  
+ * Client zurückgeliefert (selbst definierte HTTP-Header sollte immer 
+ * mit "X-" beginnen).
  */
 function middlewareRequestZaehler(req, res, next) {
     
     requestZaehler++;
     console.log(`Anzahl Requests: ${requestZaehler}\n`);
+
+    res.setHeader("X-REQUEST-ZAEHLER", requestZaehler);
+
     next();
 }
 
