@@ -20,7 +20,7 @@ const db = await JSONFilePreset("db.json", defaultDataObj);
 
 
 // Liste der gültigen API-Keys
-let API_KEY_ARRAY = [ "abc-123", "xyz-123", "abc-789", "xyz-789" ];
+const API_KEY_ARRAY = [ "abc-123", "xyz-123", "abc-789", "xyz-789" ];
 
 
 /**
