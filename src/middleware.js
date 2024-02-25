@@ -77,9 +77,11 @@ function middlewareRequestZaehler(req, res, next) {
 
 
 /**
- * Export der Middleware-Funktionen über ein Objekt.
+ * Export der Middleware-Funktionen als Attribute eines
+ * gemeinsamen Objekts namens "middleware".
  */
 export const middleware = {
+
     middlewareApiKeyCheck,
     middlewareLogger,
     middlewareRequestZaehler
