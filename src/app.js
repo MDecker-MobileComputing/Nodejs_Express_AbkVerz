@@ -20,6 +20,21 @@ const db = await JSONFilePreset("db.json", defaultDataObj);
 
 
 /**
+ * Middleware-Funktion, die alle eingehenden Requests auf `console.log()`
+ * schreibt.
+ */
+function middlewareLogger(req, res, next) {
+
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.originalUrl}`);
+    next();
+}
+
+// Middleware-Funktion registrieren (vor der Definition der REST-Endpunkte!)
+app.use( middlewareLogger );
+
+
+
+/**
  * REST-Endpunkt zum Abrufen der Bedeutungen einer Abkürzung.
  */
 app.get("/abkverz/v1/abfrage/:abk", (req, res) => {
@@ -77,8 +92,6 @@ app.post("/abkverz/v1/dazu/:abk/:bedeutung", async (req, res) => {
     const abk       = decodeURIComponent( req.params.abk       );
     const bedeutung = decodeURIComponent( req.params.bedeutung );
 
-    console.log(`POST-Request für Abkürzung: ${abk}, Bedeutung: ${bedeutung}`);
-
     const abkNormalized = abk.trim().toUpperCase();
 
     let schonDa = db.data[ abkNormalized ];
@@ -94,12 +107,10 @@ app.post("/abkverz/v1/dazu/:abk/:bedeutung", async (req, res) => {
             return;
         }
 
-        console.log(`Weitere Bedeutung für Abkürzung ${abkNormalized} gespeichert: ${bedeutung}`);
         schonDa.push(bedeutung); // weiteres Element für String-Array
 
     } else {
 
-        console.log(`Erste Bedeutung für Abkürzung ${abkNormalized} gespeichert: ${bedeutung}`);
         db.data[ abkNormalized ] = [ bedeutung ];
     }
 
@@ -195,8 +206,10 @@ app.delete("/abkverz/v1/loesche/bedeutung/:abk/:bedeutung", async (req, res) => 
 });
 
 
+
 // statische Dateien (z.B. "index.html") aus Unterordner "public/" bereitstellen
 app.use( express.static("public") );
+
 
 
 // Web-Server starten
