@@ -9,7 +9,7 @@ const app = express();
 
 // Datenbank initialisieren
 //
-// Datenmodell: die Abkürzungen sind Schlüssel auf oberster Ebene im JSON-Objekt, 
+// Datenmodell: die Abkürzungen sind Schlüssel auf oberster Ebene im JSON-Objekt,
 // die String-Arrays mit mindestens einem Eintrag=Bedeutung referenzieren.
 const defaultDataObj =  {
 
@@ -24,7 +24,7 @@ const db = await JSONFilePreset("db.json", defaultDataObj);
 // Middleware-Funktion registrieren, vor den REST-Endpunkten;
 // Reihenfolge ist wichtig!
 
-app.use( middleware.middlewareApiKeyCheck    );
+//app.use( middleware.middlewareApiKeyCheck    );
 app.use( middleware.middlewareLogger         );
 app.use( middleware.middlewareRequestZaehler );
 
@@ -64,7 +64,7 @@ app.get("/abkverz/v1/metriken", (req, res) => {
     let bedeutungZaehler = 0;
 
     Object.keys( db.data ).forEach( (abkuerzung) => {
-       
+
         abkZaehler++;
 
         let anzahlBedeutungen = db.data[ abkuerzung ].length;
