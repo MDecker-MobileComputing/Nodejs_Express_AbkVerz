@@ -6,6 +6,7 @@ Diese Repo enthält den Quellcode für ein Nodejs-Programm, das eine REST-API
 mit zwei REST-Endpunkten zur Speicherung von Abkürzungen und zugehörigen
 Bedeutungen bereitstellt.
 Eine Abkürzung kann mehrere Bedeutungen haben.
+Es werden auch einfache Middleware-Funktionen gezeigt.
 
 <br>
 
