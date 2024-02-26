@@ -170,7 +170,7 @@ app.delete("/abkverz/v1/loesche/bedeutung/:abk/:bedeutung", async (req, res) => 
 
     const bedeutung = decodeURIComponent( req.params.bedeutung );
 
-    if (db.data[ abkNormalized ].includes(bedeutung) == false) {
+    if (db.data[ abkNormalized ].includes(bedeutung) === false) {
 
         res.status(404)
         .json({ "erfolg": false,
