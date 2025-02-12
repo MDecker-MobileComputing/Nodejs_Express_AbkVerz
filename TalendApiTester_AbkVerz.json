@@ -4,7 +4,7 @@
     {
       "entity": {
         "type": "Project",
-        "id": "1bfc40ef-8be6-4f0f-89d2-1c8282c116c3",
+        "id": "9d92de38-2fa3-41e6-b0e5-c7f5fadfe8df",
         "name": "AbkVerz"
       },
       "children": [
@@ -26,7 +26,13 @@
             "uri": {
               "query": {
                 "delimiter": "&",
-                "items": []
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "API_KEY",
+                    "value": "abc-123"
+                  }
+                ]
               },
               "scheme": {
                 "name": "http",
@@ -35,7 +41,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/abfrage/KSC"
             },
-            "id": "726c18cf-48b1-4a50-8a5b-939faf750f12",
+            "id": "765c5311-1f58-45f0-80f0-97e87eba7f86",
             "name": "Abfrage \"KSC\"",
             "headers": []
           }
@@ -58,7 +64,13 @@
             "uri": {
               "query": {
                 "delimiter": "&",
-                "items": []
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "API_KEY",
+                    "value": "abc-123"
+                  }
+                ]
               },
               "scheme": {
                 "name": "http",
@@ -67,7 +79,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/abfrage/Ksc"
             },
-            "id": "6fb9685e-4582-48e8-b91d-cda5b92a2f92",
+            "id": "e5abdb92-fe91-4971-94ae-1594e975d085",
             "name": "Abfrage \"Ksc\"",
             "headers": []
           }
@@ -90,7 +102,13 @@
             "uri": {
               "query": {
                 "delimiter": "&",
-                "items": []
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "API_KEY",
+                    "value": "abc-123"
+                  }
+                ]
               },
               "scheme": {
                 "name": "http",
@@ -99,7 +117,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/abfrage/NPM"
             },
-            "id": "8fb2b3a9-096b-492a-8198-1ea8b70723ab",
+            "id": "7eca0a90-5e78-4108-8023-cb5d6f754edb",
             "name": "Abfrage \"NPM\"",
             "headers": []
           }
@@ -122,7 +140,13 @@
             "uri": {
               "query": {
                 "delimiter": "&",
-                "items": []
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "API_KEY",
+                    "value": "abc-789"
+                  }
+                ]
               },
               "scheme": {
                 "name": "http",
@@ -131,7 +155,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/loesche/abkuerzung/KSC"
             },
-            "id": "d839d67f-c548-474f-bfc5-656c44abe7a9",
+            "id": "9208660d-44f0-43e2-8dc7-f41c6d4da948",
             "name": "Löschen: Abkürzung",
             "headers": []
           }
@@ -154,7 +178,13 @@
             "uri": {
               "query": {
                 "delimiter": "&",
-                "items": []
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "API_KEY",
+                    "value": "abc-789"
+                  }
+                ]
               },
               "scheme": {
                 "name": "http",
@@ -163,7 +193,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/loesche/bedeutung/NPM/Never Pay Anything"
             },
-            "id": "6c0bc1c4-090a-4078-b6be-4322ef6d37a5",
+            "id": "3eea3bcb-6855-49d5-82b7-240fe9e6ebfb",
             "name": "Löschen: Bedeutung",
             "headers": []
           }
@@ -186,7 +216,13 @@
             "uri": {
               "query": {
                 "delimiter": "&",
-                "items": []
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "API_KEY",
+                    "value": "xyz-123"
+                  }
+                ]
               },
               "scheme": {
                 "name": "http",
@@ -195,7 +231,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/metriken"
             },
-            "id": "2aa223ff-07bd-4b7c-a884-9a02f955d433",
+            "id": "b4bf9a6a-ebb7-46ec-aacb-ab98b4efbd3a",
             "name": "Metriken",
             "headers": []
           }
@@ -219,7 +255,13 @@
             "uri": {
               "query": {
                 "delimiter": "&",
-                "items": []
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "API_KEY",
+                    "value": "xyz-123"
+                  }
+                ]
               },
               "scheme": {
                 "name": "http",
@@ -228,7 +270,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/dazu/ABK/Abk%C3%BCrzung"
             },
-            "id": "1d68d2ac-96d5-4541-a1c3-c5bdf26c3e47",
+            "id": "3e36d85f-8eea-40ec-acf2-d3016e40022a",
             "name": "neue ABK: \"ABK\" (Bedeutung mit Umlaut)",
             "headers": [
               {
@@ -258,7 +300,13 @@
             "uri": {
               "query": {
                 "delimiter": "&",
-                "items": []
+                "items": [
+                  {
+                    "enabled": true,
+                    "name": "API_KEY",
+                    "value": "xyz-123"
+                  }
+                ]
               },
               "scheme": {
                 "name": "http",
@@ -267,7 +315,7 @@
               "host": "localhost:8080",
               "path": "/abkverz/v1/dazu/NPM/Node Package Manager"
             },
-            "id": "128b01a9-3cab-4a97-9c0c-77749014753e",
+            "id": "218fd121-5034-4a3b-b4cd-0f8c9074046f",
             "name": "neue ABK: \"NPM\"",
             "headers": [
               {
