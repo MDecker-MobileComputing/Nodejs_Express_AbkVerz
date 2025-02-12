@@ -1,6 +1,6 @@
 import express from 'express';
 import { JSONFilePreset } from 'lowdb/node';
-import { middleware } from './middleware.js';
+import { middleware     } from './middleware.js';
 
 const PORT_NUMMER = 8080;
 
@@ -71,6 +71,8 @@ app.get( "/abkverz/v1/metriken", ( req, res ) => {
         bedeutungZaehler += anzahlBedeutungen;
     });
 
+    //console.log( `Anzahl Abkürzungen: ${abkZaehler}, Anzahl Bedeutungen: ${bedeutungZaehler}` );
+
     res.status( 200 )
        .json({ "anzahlAbkuerzungen": abkZaehler,
                "anzahlBedeutungen" : bedeutungZaehler
@@ -96,9 +98,9 @@ app.post( "/abkverz/v1/dazu/:abk/:bedeutung", async (req, res) => {
         if ( schonDa.includes( bedeutung ) ) {
 
             res.status( 409 )
-            .json({ "erfolg": false,
+            .json({ "erfolg"     : false,
                     "bedeutungen": db.data[ abkNormalized ],
-                    "fehler": `Bedeutung "${bedeutung}" für Abkürzung "${abkNormalized}" bereits vorhanden.`
+                    "fehler"     : `Bedeutung "${bedeutung}" für Abkürzung "${abkNormalized}" bereits vorhanden.`
                   });
             return;
         }
@@ -202,10 +204,8 @@ app.delete( "/abkverz/v1/loesche/bedeutung/:abk/:bedeutung", async (req, res) =>
 });
 
 
-
 // statische Dateien (z.B. "index.html") aus Unterordner "public/" bereitstellen
 app.use( express.static( "public" ) );
-
 
 
 // Web-Server starten

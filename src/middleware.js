@@ -12,6 +12,9 @@
 // Liste der gültigen API-Keys
 const API_KEY_ARRAY = [ "abc-123", "xyz-123", "abc-789", "xyz-789" ];
 
+// Liste von String-Enden mit Pfaden, die von der API-Key-Prüfung ausgenommen sind
+const API_KEY_AUSNAHMEN = [ "/", ".html", ".css",  ];
+
 
 /**
  * Middleware-Funktion (sollte als erstes in der Middleware-Kette stehen),
@@ -20,6 +23,14 @@ const API_KEY_ARRAY = [ "abc-123", "xyz-123", "abc-789", "xyz-789" ];
  * abgelehnt.
  */
 function middlewareApiKeyCheck( req, res, next ) {
+
+    const requestPfad = req.path;
+
+    // Prüfung für bestimmte Dateien überspringen
+    if ( API_KEY_AUSNAHMEN.some( pfad => requestPfad.endsWith( pfad ) ) ) {
+
+        return next();
+    }
 
     const apiKey = req.query.API_KEY;
 
